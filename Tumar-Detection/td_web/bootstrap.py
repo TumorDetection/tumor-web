@@ -1,11 +1,9 @@
-from tumor_detection.api import TumorDetection
 from tensorflow.keras.models import load_model
-import os
-# Load your trained model
-model_directory = os.path.join(os.path.dirname(__file__), "model")
-model = load_model(model_directory)
 
+from config import MODEL_DIRECTORY
+from tumor_detection.api import TumorDetection
 
+model = load_model(MODEL_DIRECTORY)
 
 
 def tumor_detection_factory():
